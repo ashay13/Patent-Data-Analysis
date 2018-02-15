@@ -1,0 +1,116 @@
+<div class="dashboard-container">
+    <div class="dashboard-charts-container">
+        <div class="row">
+            <div class="col xs12 s12 m3 l3 padd-right">
+                <div class="chart shadow one card-panel">
+                    <div class="data">
+                        <div class="name">Total Patents</div>
+                        <div class="value">{{dashboardCtrl.totalPatents}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col xs12 s12 m3 l3 padd-right">
+                <div class="chart shadow two card-panel">
+                    <div class="data">
+                        <div class="name">Most Patents</div>
+                        <div class="value">{{dashboardCtrl.statsCountry.key}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col xs12 s12 m3 l3 padd-right">
+                <div class="chart shadow three card-panel">
+                    <div class="data">
+                        <div class="name">Top Sector</div>
+                        <div class="value">{{dashboardCtrl.statsSector.key}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col xs12 s12 m3 l3">
+                <div class="chart shadow four card-panel">
+                    <div class="data">
+                        <div class="name">Top Company</div>
+                        <div class="value">{{dashboardCtrl.statsOrg.key}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col xs12 s12 m6 l6">
+                <div class="chart leaflet-map card-panel">
+                    <div class="chart-title">Patent Geographical Distribution</div>
+                    <div class="load" ng-show="dashboardCtrl.showLeafletLoader">
+                        <loader-container display="dashboardCtrl.showLeafletLoader"></loader-container>
+                    </div>
+                    <div class="chart-container">
+                        <leaflet-map ng-if="!dashboardCtrl.showLeafletError" map-data="dashboardCtrl.leafletData"></leaflet-map>
+                        <div class="error" ng-show="dashboardCtrl.showLeafletError">
+                            Error while fetching map data. <span ng-click="dashboardCtrl.getPatentDistributionMapData()">Refresh</span> to
+                            try again.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col xs12 s12 m6 l6">
+                <div class="chart middle-chart card-panel">
+                    <div class="chart-title">Sector Distribution Across Organizations</div>
+                    <div class="show-top5-label" ng-show="dashboardCtrl.showtopStackedLabel">Showing for Top 5 organizations</div>
+                    <loader-container display="dashboardCtrl.showStackedbarLoader"></loader-container>
+                    <div class="chart-container parent-stacked">
+                        <canvas ng-show="!dashboardCtrl.showStackedbarError" id="stackedbar-chart" class="canvas-chart"></canvas>
+                        <div class="error" ng-show="dashboardCtrl.showStackedbarError">
+                            Error while fetching keyword distribution data. <span ng-click="dashboardCtrl.getKeywordAcrossCompanyData()">Refresh</span> to
+                            try again.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col xs12 s12 m6 l6">
+                <div class="chart middle-chart trend-analysis card-panel">
+                    <div class="chart-title">Keyword and Organization Overview for Computer Technology</div>
+                    <loader-container display="dashboardCtrl.shwoCirclePackingLoader"></loader-container>
+                    <div class="chart-container">
+                        <circle-packing ng-show="!dashboardCtrl.shwoCirclePackingError" nodes="dashboardCtrl.nodes" height="550" width="550" radius="550" ></circle-packing>
+                        <div class="error" ng-show="dashboardCtrl.shwoCirclePackingError">
+                            Error while fetching keyword distribution data. <span ng-click="dashboardCtrl.getQuarterlyDataFor()">Refresh</span> to
+                            try again.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col xs12 s12 m6 l6">
+                <div class="chart middle-chart trend-analysis card-panel">
+                    <div class="row">
+                        <div class="col xs12 s12 m8 l8">
+                            <div class="chart-title">Keyword Trend Analysis for Computer Technology</div>
+                        </div>
+                        <div class="col xs12 s12 m4 l4 trend">
+                            <div class="year-container" ng-show="dashboardCtrl.showSelectedYear">
+                                <span class="name">Year</span> <span class="year">{{dashboardCtrl.selectedCircleYear}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-details" ng-show="dashboardCtrl.showStat">
+                        <div class="title">{{dashboardCtrl.selectedRangeData.name}}</div>
+                        <!--<div class="cont">
+                            <span class="name">Most used keyword</span> <span class="value">{{dashboardCtrl.valueData.name}}</span>
+                        </div>
+                        <div class="cont">
+                            <span class="name">No of organizations</span> <span class="value">{{dashboardCtrl.valueData.children.length}}</span>
+                        </div> -->
+                    </div>
+                    <loader-container display="dashboardCtrl.shwoLinechartLoader"></loader-container>
+                    <div class="chart-container">
+                        <canvas ng-show="!dashboardCtrl.showLinechartError" id="line-chart" class="canvas-chart"></canvas>
+                        <div class="error" ng-show="dashboardCtrl.showLinechartError">
+                            Error while fetching keyword distribution data. <span ng-click="dashboardCtrl.getQuarterlyDataFor()">Refresh</span> to
+                            try again.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

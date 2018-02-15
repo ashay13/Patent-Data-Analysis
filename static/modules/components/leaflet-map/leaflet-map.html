@@ -1,0 +1,35 @@
+<div class="leaf-map-container">
+    <div id="map" style="height: 100%"></div>
+</div>
+
+<!-- Modal Structure -->
+<div class="modal-container" ng-show="showModal">  
+</div>
+
+<div class="modal-body" ng-show="showModal">
+  <div class="head">
+    <span class="left"><strong>{{selectedFeature.properties.name}}</strong> : Patent across states</span>
+    <span class="right">
+      <a class="btn-floating btn-large waves-effect waves-light" ng-click="closeModal()"><i class="material-icons">remove</i></a>
+    </span>
+  </div>
+  <div class="body">
+    <div class="row">
+      <div class="col xs4 s4 m4 l4 xl4">
+        <div class="title">Total Patents : <strong>{{selectedFeature.properties.density}}</strong></div>
+      </div>
+      <div class="col xs4 s4 m4 l4 xl4">
+        <div class="title">Showing : <strong>{{showingTotal}}</strong></div>
+      </div>
+      <div class="col xs4 s4 m4 l4 xl4">
+        <div class="title">Other : <strong>{{selectedFeature.properties.density - showingTotal}}</strong></div>
+      </div>
+    </div>    
+    <br />
+    <div class="chart-container modal-pie">
+      <!--<canvas id="line-chart" class="canvas-chart"></canvas>-->
+      <div class="canvas-title">Top states holding most patents</div>
+      <canvas id="pie-chart" class="canvas-chart"></canvas>
+    </div>   
+  </div>
+</div>

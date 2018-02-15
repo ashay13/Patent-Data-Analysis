@@ -1,0 +1,536 @@
+#toast-container{
+    .toast{
+        background-color: #de3c3c;
+        font-weight: bold;
+        display: block;
+    }
+}
+.application-container{
+    .header-navigation-container{
+        .header{
+            padding: 20px 40px;
+            color: #fff;
+            font-size: 20px;
+            background: #2f353f;
+            /*background: rgba(0,0,0,.85);*/
+            box-shadow: 0 -9px 10px 10px #333;
+            position: fixed;
+            width: 100%;
+            font-weight: bold;
+            z-index: 99999;
+        }
+    }
+    .material-nav{
+        height: 70px;
+        background: #2f353f;
+        position: fixed;
+        z-index: 9999;
+        .nav-wrapper{
+            a, span{
+                float: left;
+                padding-left: 20px;
+            }
+            .brand-logo{
+                font-size: 26px;
+            }
+        }
+    }
+    .side-nav{
+        z-index: 9999;
+        width: 320px;
+        background: #1b1f25;
+    }
+    .leftnav-options-container{
+        .all-options-container{
+            .mar-top{
+                margin-top: 2px;
+            }
+        }
+        .head{
+            height: 70px;
+            background: #52a7a7;
+            color: #fff;
+            font-size: 26px;
+            padding: 15px 10px;
+        }
+        .btn{
+            width: 100%;
+            text-align: left;
+            padding: 5px 10px;
+            height: auto;
+            border-radius: 0;
+            background: #484f58;
+            box-shadow: none;
+            .name{
+                font-size: 16px;
+            }
+            .icon-span{
+                float: right;
+            }
+        }
+    }
+    .get-data-btn-container{        
+        a{
+            text-align: center !important;
+            width: 95% !important;
+            margin: 10px auto !important;
+            border: 1px solid !important;
+            background: transparent !important;
+            line-height: 45px !important;           
+        }
+        a:hover{
+                border: 2px solid #2bbbad;
+            }
+    }
+    .options{
+        padding: 0;
+        .check{
+            padding: 8px 0 0px 10px;
+            label{
+                padding-left: 25px;
+                color: #fff;            
+            }
+            input[type="checkbox"]{
+                visibility: hidden;
+            }
+            [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after{
+                border: 2px solid #fff;
+            }
+            [type="radio"]+label:before, [type="radio"]+label:after{
+                margin: 4px 4px 4px 0;
+            }
+            [type="checkbox"]:checked + label:before{
+                top: 2px;
+                left: -2px;
+                width: 10px;
+                height: 16px;
+                border-right: 3px solid #26a69a;
+                border-bottom: 3px solid #26a69a;
+                border-top: 1px solid transparent;
+                border-left: 1px solid transparent;        
+            }
+            [type="checkbox"]+label:before{
+                border: 1px solid #fff;
+                width: 15px;
+                height: 15px;
+                margin-top: 4px;
+            }
+            [type="checkbox"]+label{
+                padding-left: 28px;
+                font-size: 14px;
+            }
+        }
+        .search-container{
+            background: #484f58;
+            padding: 8px 16px 0;
+            .input-field{
+                margin: 0;
+                input{
+                    color: #fff;
+                }
+            }
+        }
+        .opt-container{
+            max-height: 280px;
+            padding-left: 10px;
+            margin-bottom: 2px;
+            overflow: auto;
+        }
+    }
+}
+.fixed-action-btn{
+    top: 18px;
+    z-index: 99999;
+    .btn-floating.btn-large{
+        height: 70px;
+        width: 70px;
+        background: #EF8680;
+        i{
+            line-height: 70px;
+            font-size: 36px;
+        }
+    }
+}
+.main-sidebar-container{
+    padding: 62px 0px 10px 0px;
+    font-weight: bold;
+    background: #f2f2f2;
+    .loader-container{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #333;
+        z-index: 999999;
+        top: 0;
+        left: 0;
+        opacity: 0.9;
+        .load-text{
+            position: absolute;
+            top: 53%;
+            left: 48%;
+            color: #fff;
+            font-size: 18px;
+        }
+        .progress{
+            position: absolute;
+            top: 50%;
+            width: 185px;
+            left: 45%;
+            height: 15px;
+        }
+    }
+    .date-picker-container{
+        margin: 5px 0 0 0;
+        padding: 20px 20px 5px;
+        .date-container{
+            margin: 5px 0 0px;
+            label{
+                font-size: 16px;
+                color: #444;
+            }
+            a{
+                margin: 10px 0 0 10px;
+                letter-spacing: 0;
+            }
+            .btn{
+                margin-top:12px;
+            }
+            input.to-datepicker, input.from-datepicker{
+                padding-left: 28px;
+                background-image: url('../img/calendar.png');
+                background-repeat: no-repeat;
+                background-size: 20px 20px;
+                width: 95%;
+                background-position: 2px 10px;
+            }
+            .name-container{
+                padding-left: 50px;
+                .name-item{
+                    overflow: hidden;
+                    padding: 0 0 10px;
+                    .row{
+                        margin-bottom: 0;
+                    }
+                    .left{
+                        float: left;
+                    }
+                    .count{
+                        width: 70px;
+                        background: #4eafce;
+                        text-align: center;
+                        color: #fff;
+                        padding: 5px;
+                        border-radius: 2px;
+                    }
+                    .no-data{
+                        width: 200px;
+                        color: #aaa;
+                    }
+                }
+            }
+            .refresh-container{
+                background: #333;
+                width: 56px;
+                text-align: center;
+                padding: 10px 10px 5px;
+                border-radius: 28px;
+                margin-top: 20px;
+                &:hover{
+                    cursor: pointer;
+                }
+                i{
+                    color: #fff;
+                    font-size: 36px;
+                }
+            }
+        }
+    }
+}
+.dashboard-container{    
+    .dashboard-charts-container{
+        margin-top: 20px;
+        overflow: hidden;
+        .card-panel{
+            margin: 0;
+            padding: 0;
+        }
+        .chart{
+            .chart-title{
+                padding: 10px;
+                font-size: 20px;
+                color: #333;
+                text-align: left;
+                // border-bottom: 1px solid #bebebe;
+            }
+        }
+        .shadow{
+            width: 100%;
+            height: auto;
+            padding: 10px;
+            color: #fff;
+            margin: 2px 0;
+            min-height: 120px;
+            .data{
+                padding-left: 35px;
+                .value{
+                    font-size: 26px;
+                    font-weight: normal;
+                    line-height: 26px;
+                }
+                .name{
+                    font-size: 16px;
+                    font-weight: normal;
+                    padding-bottom: 5px;
+                }
+            }
+        }
+        .one{
+            background: #1CB09A;
+        }
+        .two{
+            background: #DA534F;
+        }
+        .three{
+            background: #418BCA;
+        }
+        .four{
+            background: #1D2939;
+        }
+        .leaflet-map{ 
+            width: 100%;
+            height: 500px;
+            margin: 20px 0 0px;
+            .chart-container{
+                height: 100%;
+            }
+            .load{
+                width: 100%; height: 100%;position: relative;
+                .inside-loader{
+                    top: -50px;
+                }
+            }
+            .leaf-map-container{
+                padding: 12px 15px 20px;
+                height: 90%;
+                #map{
+                    padding: 10px;
+                    .legend {
+                        line-height: 18px;
+                        color: #555;
+                        background: #fff;
+                        padding: 10px;
+                        margin: 0;
+                    }
+                    .legend i {
+                        width: 18px;
+                        height: 15px;
+                        float: left;
+                        margin-right: 8px;
+                        opacity: 0.7;
+                    }
+                    .leaflet-control-attribution{
+                        display: none;
+                    }
+                }
+            }
+            .modal-container{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background: #000;
+                width: 100%;
+                z-index: 99999;
+                opacity: 0.8;
+            }
+            .modal-body{
+                background: #fff;
+                z-index: 99999;
+                width: 50%;
+                position: absolute;
+                top: 35px;
+                padding: 10px;
+                border-radius: 2px;
+                left: 25%;
+                .head{
+                    overflow: hidden;
+                    font-size: 20px;
+                    padding: 0 0 15px 0;
+                    font-weight: normal;
+                    .left{
+                        float: left;
+                        strong{
+                            font-weight: 800;
+                        }
+                    }
+                    .right{
+                        float: right;
+                        a{
+                            height: 35px;
+                            width: 35px;
+                            padding: 0;
+                            line-height: 45px;
+                            background: #333;
+                            i{
+                                line-height: 0;
+                            }
+                        }
+                    }
+                }
+                .body{
+                    height: 500px;
+                    padding: 10px 0 0;
+                    .chart-container{
+                        height: 80%;
+                        padding: 0 10px 10px;
+                        .canvas-title{
+                            padding: 0 0 10px 0;
+                        }
+                        .canvas-chart{
+                            height: 100% !important;
+                            width: 100% !important;
+                            background: #eee;
+                            padding: 10px;
+                        }
+                    }
+                    .title{
+                        strong{
+                            background: #006780;
+                            padding: 5px 10px;
+                            border-radius: 2px;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            .error{                
+                padding-top: 155px;
+                color: #7f7f7f;
+                font-size: 14px;
+                font-weight: normal;
+                width: 100%;
+                text-align: center;
+                span{
+                    font-weight: bold;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .middle-chart{
+            height: 500px;
+            width:100%;
+            margin: 20px 0 0;
+            position: relative;
+            .show-top5-label{
+                padding: 2px 0 2px 12px;
+            }
+            .chart-container{
+                height: 82%;
+                padding: 20px;
+                width: 95%;
+                position: relative;
+                .canvas-chart{
+                    height: 100% !important;
+                    width: 100% !important;
+                }
+                .error{
+                    position: absolute;
+                    top: 35%;
+                    width: 100%;
+                    text-align: center;
+                    color: #7f7f7f;
+                    font-size: 14px;
+                    font-weight: normal;
+                    span{
+                        font-weight: bold;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }                    
+        }
+        .trend-analysis{
+            height: 650px;
+            text-align: center;
+            .chart-container{
+                height: 72%;
+            }
+            .trend{
+                .quarterly-title{
+                    float: left;
+                    width: 40%;
+                    padding-top: 22px;
+                    font-size: 16px;
+                }
+                .quarterly-select{
+                    float: left;
+                    width: 60%;                    
+                }
+                .year-container{
+                    text-align: right;
+                    padding: 12px 20px 0;
+                    font-size: 20px;
+                    .year{
+                        background: #00897b;
+                        padding: 5px 15px;
+                        color: #fff;
+                        border-radius: 2px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+            .stat-details{
+                 text-align: left;
+                padding: 0 0 0 20px;
+                .title{
+                    font-size: 20px;
+                }
+                .cont{
+                    padding: 10px 0;
+                    .name{
+
+                    }
+                    .value{
+                        background: #00acc1;
+                        padding: 5px 10px;
+                        color: #fff;
+                        border-radius: 1px;
+                    }
+                }
+            }
+        }
+        .chart{
+            .inside-loader{
+                background: #333;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                z-index: 9999;
+                opacity: 0.8;
+                color: #fff;
+                .preloader-wrapper{
+                    position: absolute;
+                    top: 45%;
+                    left: 45%;
+                }
+            }
+        }
+    }
+    .row-fluid{
+        .col{
+            padding-left: 0;
+            padding-right: 5px;
+        }
+        .padd-right{
+            padding-right: 20px;
+        }
+    }
+}
+
+#sidenav-overlay{
+    z-index: 1000;
+}

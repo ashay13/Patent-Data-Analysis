@@ -1,0 +1,1 @@
+angular.module('PatentDataAnaysis',['ui.router','ui.materialize']);

@@ -1,0 +1,156 @@
+<ul id="slide-out" class="side-nav">
+    <div class="leftnav-options-container">
+        <div class="head">Patent Data Analytics</div>
+        <!--<div class="get-data-btn-container">
+            <a class="waves-effect waves-light btn">Get Data</a>
+        </div>-->
+        <div class="all-options-container">
+            <div selected-dropdown class="waves-effect waves-light btn">
+                <span class="name">Country</span>
+                <span class="icon-span">
+                    <i class="material-icons right">remove</i>
+                </span>
+            </div>
+            <div class="options">
+                <div class="search-container">
+                    <div input-field>
+                        <input type="text" ng-model="mainCtrl.countrySearch" />
+                        <label>Search</label>
+                    </div>
+                </div>
+                <div class="opt-container">
+                    <div class="check" ng-repeat="data in mainCtrl.countryList | filter: mainCtrl.countrySearch">
+                        <input type="checkbox" id="country{{$index+1}}" ng-model="mainCtrl.countrySelected[data.abbr]" />
+                        <label for="country{{$index+1}}">{{data.key}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div selected-dropdown class="waves-effect waves-light btn mar-top">
+                <span class="name">Sector</span>
+                <span class="icon-span">
+                    <i class="material-icons right">remove</i>
+                </span>
+            </div>
+            <div class="options">
+                <div class="search-container">
+                    <div input-field>
+                        <input type="text" ng-model="mainCtrl.sectorSearch" />
+                        <label>Search</label>
+                    </div>
+                </div>
+                <div class="opt-container">
+                    <div class="check" ng-repeat="data in mainCtrl.sectorList | filter: mainCtrl.sectorSearch">
+                        <input type="radio" name="sector" id="sector{{$index+1}}" />
+                        <label for="sector{{$index+1}}">{{data.key}}</label>
+                    </div>
+                </div>
+            </div>-->
+
+            <div selected-dropdown class="waves-effect waves-light btn mar-top">
+                <span class="name">Organization</span>
+                <span class="icon-span">
+                <i class="material-icons right">remove</i>
+            </span>
+            </div>
+            <div class="options">
+                <div class="search-container">
+                    <div input-field>
+                        <input type="text" ng-model="mainCtrl.orgSearch" />
+                        <label>Search</label>
+                    </div>
+                </div>
+                <div class="opt-container">
+                    <div class="check" ng-repeat="data in mainCtrl.organizationList | filter: mainCtrl.orgSearch">
+                        <input type="checkbox" id="organization{{$index+1}}" ng-model="mainCtrl.orgSelcted[data.key]" />
+                        <label for="organization{{$index+1}}">{{data.key}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ul>
+
+<nav class="material-nav">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="slide-out" class="button1-collapse"><i class="material-icons">menu</i></a>
+        <span class="brand-logo">Patent Data Analytics</span>
+    </div>
+</nav>
+
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large waves-effect" ng-click="mainCtrl.showDatePickerContainer()">
+        <i class="large material-icons">swap_vert</i>
+    </a>
+</div>
+
+<div class="main-sidebar-container">
+    <div class="loader-container" ng-show="mainCtrl.showLoader">
+        <div class="load-text">Loading</div>
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+    <div class="date-picker-container card-panel">
+        <div class="row date-container">
+            <div class="col xs3 s5 m5 l3">            
+                <label for="inputCreated">From</label>
+                <input id="icon_prefix" type="text" date-picker class="from-datepicker" min="mainCtrl.minFromDate" ng-model="mainCtrl.fromDate" />
+            </div>
+            <div class="col xs3 s5 m5 l3">
+                <label for="inputCreated">To</label>
+                <input type="text" date-picker class="to-datepicker" min="mainCtrl.fromDate" ng-model="mainCtrl.toDate" />
+            </div>
+            <div class="col xs1 s2 m2 l1">
+                <br />
+                <input type="button" class="waves-effect waves-light btn" ng-click="mainCtrl.getDaterangeData()" value="Get Data">
+            </div>
+            <div class="col xs6 s6 m6 l4">
+                <div class="name-container">
+                    <div class="name-item">
+                        <div class="left"><i class="material-icons">assessment</i></div>
+                        <div class="row">
+                            <div class="col xs3 s3 l3 xl3">
+                                <div class="name">Company</div>                                
+                            </div>
+                            <div class="col xs3 s3 l3 xl3">
+                                <div class="count" ng-show="mainCtrl.countryList">{{mainCtrl.countryList.length}}</div>
+                                <div class="no-data" ng-show="!mainCtrl.countryList">No data found</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="name-item">
+                        <div class="left"><i class="material-icons">web</i></div>
+                        <div class="row">
+                            <div class="col xs3 s3 l3 xl3">
+                                <div class="name">Sector</div>
+                            </div>
+                            <div class="col xs3 s3 l3 xl3">
+                                <div class="count" ng-show="mainCtrl.sectorList">{{mainCtrl.sectorList.length}}</div>
+                                <div class="no-data" ng-show="!mainCtrl.sectorList">No data found</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="name-item">
+                        <div class="left"><i class="material-icons">assignment_ind</i></div>
+                        <div class="row">
+                            <div class="col xs3 s3 l3 xl3">
+                                <div class="name">Organization</div>
+                            </div>
+                            <div class="col xs3 s3 l3 xl3">
+                                <div class="count" ng-show="mainCtrl.organizationList">{{mainCtrl.organizationList.length}}</div>
+                                <div class="no-data" ng-show="!mainCtrl.organizationList">No data found</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col xs6 s6 m6 l1">
+                <div class="refresh-container card-panel tooltipped" data-position="top" data-delay="50" data-tooltip="Click to Refresh" ng-click="mainCtrl.getInitialData()">
+                    <i class="material-icons">loop</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ui-view></ui-view>
+</div>

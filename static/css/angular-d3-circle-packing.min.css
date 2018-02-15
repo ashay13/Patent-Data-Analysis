@@ -1,0 +1,59 @@
+#chart > ul {
+  margin: 0;
+  padding: 0;
+}
+.invert {
+  background: #1f1f1f;
+  color: #dcdccc;
+}
+.invert h2,
+.invert h3 {
+  color: #7f9f7f;
+}
+.string,
+.regexp {
+  color:  #FFFFFF;
+}
+.keyword {
+  color:  #FFFFFF;
+}
+.comment {
+  color:  #FFFFFF;
+  font-style: oblique;
+}
+.number {
+  color:  #FFFFFF;
+}
+.class,
+.special {
+  color: #1181B8;
+}
+#chart > svg {
+  position: absolute;
+}
+text {
+  font-size: 10px;
+  pointer-events: none;
+  fill: #fff;
+}
+text.parent {
+  fill: #fff;
+}
+circle {
+  fill: #0c1354;
+  fill-opacity: .7;
+  pointer-events: all;
+}
+circle.parent {
+  fill: #1a237e;
+  fill-opacity: .3;
+  stroke: #1a237e;
+}
+circle.parent:hover {
+  fill-opacity: .5;
+  stroke: #0000cc;
+  stroke-width: .5px;
+}
+circle.child {
+  pointer-events: none;
+}
